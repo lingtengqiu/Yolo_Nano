@@ -24,6 +24,7 @@ Better Para:
    --model_def ./config/yolo-nano_person.cfg  
    --lr 2.5e-4  
    --fix_up True  
+   --lr_policy cosine
 ```
 ## Testing
 ```bash
