@@ -12,6 +12,7 @@ import torch
 from torch.utils.data import DataLoader
 from torch.autograd import Variable
 from models.yolo_nano_helper import YoloNano
+from torch.nn.parallel import DataParallel
 
 @torch.no_grad()
 def evaluate(model, path, conf_thres, nms_thres, img_size, batch_size,data_type):
