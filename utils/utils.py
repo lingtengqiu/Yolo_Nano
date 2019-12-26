@@ -309,14 +309,17 @@ def build_targets(pred_boxes, pred_cls, target, anchors, ignore_thres,img_scores
     batches_weight_1 = batches_weight_1.expand_as(sum_weights_1)
 
     img_scores_2 = img_scores[gt_mix_index==1]
-    val,arg_index = torch.unique(img_scores_2, return_inverse=True)
-    arg_index = arg_index.cpu().numpy().tolist()
-    sorted_index = list(set(arg_index))
-    sorted_index.sort(key = arg_index.index)
-    batches_weight_2 = val[sorted_index][:nB,None,None,None]
-    batches_weight_2 = batches_weight_2.expand_as(sum_weights_2)
 
-    batch_weight = batches_weight_1+batches_weight_2
+    if img_scores_2.shape[0] == 0:
+        batches_weight_2 = None
+    else:
+        val,arg_index = torch.unique(img_scores_2, return_inverse=True)
+        arg_index = arg_index.cpu().numpy().tolist()
+        sorted_index = list(set(arg_index))
+        sorted_index.sort(key = arg_index.index)
+        batches_weight_2 = val[sorted_index][:nB,None,None,None]
+        batches_weight_2 = batches_weight_2.expand_as(sum_weights_2)
+
 
 
 
@@ -384,13 +387,15 @@ def build_targets(pred_boxes, pred_cls, target, anchors, ignore_thres,img_scores
     obj_mask_1[b_1, best_n_1, gj_1, gi_1] = 1
 
     gxy_2 = gxy[gt_mix_index == 1]
-    gi_2, gj_2 = gxy_2.long().t()
-    b_2 = b[gt_mix_index == 1]
-    best_n_2 = best_n[gt_mix_index == 1]
-    obj_mask_2 = ByteTensor(nB, nA, nG, nG).fill_(0)
+    if gxy_2.shape[0] ==0:
+        obj_mask_2 = None
+    else:
+        gi_2, gj_2 = gxy_2.long().t()
+        b_2 = b[gt_mix_index == 1]
+        best_n_2 = best_n[gt_mix_index == 1]
+        obj_mask_2 = ByteTensor(nB, nA, nG, nG).fill_(0)
 
-    obj_mask_2[b_2, best_n_2, gj_2, gi_2] = 1
-
+        obj_mask_2[b_2, best_n_2, gj_2, gi_2] = 1
 
 
 
