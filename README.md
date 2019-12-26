@@ -21,10 +21,9 @@ Methods |mAP@50|mAP|weights| Model
  yolo-nano          | 55.6 |27.7 | 22.0M |  [Baidu WebDisk](https://pan.baidu.com/s/1Rp0is2LqA91XwjRc41mGaw)
  
 ## Ablation Result
- Augmentation|| Fixup| mAP 
+ Augmentation| fixup | mAP 
 :--------------:|:--:|:--:
-☑ |☑ |0.55
- 
+[-]               [-]  [-]
  Baidu WebDisk Key: p2j3
 
 
