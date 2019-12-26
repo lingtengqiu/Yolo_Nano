@@ -10,12 +10,12 @@ In this engineer we only train our model using coco-train person class
 we compare with yolov-3，yolo-tiny. We got competitive results.  
 
 Methods |mAP@50|mAP|weights| Model 
-:--:|:--:|:--:|:--:  
+:--:|:--:|:--:|:--: |:--:  
  yolov3(paper)     | 74.4 |40.3 | 204.8M |  here
  yolov3-tiny(paper)| 38.8 |15.6 | 35.4M |  here
 
 
-| Model                   | mAP (min. 50 IoU) |
+| Model                   | mAP (min. 50 IoU) |mAP (min. 50 IoU)
 | ----------------------- |:-----------------:|
 | YOLOv3 608 (paper)      | 57.9              |
 | YOLOv3 608 (this impl.) | 57.3              |
