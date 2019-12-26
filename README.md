@@ -6,6 +6,8 @@ A minimal PyTorch implementation of YOLO_Nano
 [Bag of Freebies for Training Object Detection Neural Networks](https://arxiv.org/abs/1902.04103v3) tell us that fixup in object detection can increase the mAP, So I realize it and test in result. 
 - [x] Data Augmentation  
 - [x] Fixup  
+- [x] Cosine lr decay  
+- [x] Warm up
 ##### Download COCO
     $ cd data/
     $ bash get_coco_dataset.sh
