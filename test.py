@@ -87,7 +87,6 @@ if __name__ == "__main__":
 
     class_names = load_classes(data_config["names"])
 
-    # Initiate model
     if 'yolov3' in opt.model_def:
         model = Darknet(opt.model_def).to(device)
         if opt.weights_path.endswith(".weights"):
@@ -98,8 +97,14 @@ if __name__ == "__main__":
     else:
         kargs = get_nano_info(opt.model_def)
         model = YoloNano(**kargs).to(device)
-        torch.save(model.state_dict(),"xixi.pth")
-
+        model.apply(weights_init_normal)
+        model = DataParallel(model)
+    if opt.weights_path.endswith(".weights"):
+        # Load darknet weights
+        model.load_darknet_weights(opt.weights_path)
+    else:
+        # Load checkpoint weights
+        model.load_state_dict(torch.load(opt.weights_path))
 
     print("Compute mAP...")
 
