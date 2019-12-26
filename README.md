@@ -6,12 +6,12 @@ A minimal PyTorch implementation of YOLO_Nano
     $ bash get_coco_dataset.sh
     
 ## Result
-    In this engineer we only train our model using coco-train person class  
-    we compare with yolov-3，yolo-tiny. We got competitive results.
-    Methods |mAP@50|mAP|weights| Model 
-    :--:|:--:|:--:|:--:
-     yolov3(paper)     | 74.4 |40.3 | 204.8M | 
-     yolov3-tiny(paper)| 38.8 |15.6 | 35.4M | 
+In this engineer we only train our model using coco-train person class  
+we compare with yolov-3，yolo-tiny. We got competitive results.
+Methods |mAP@50|mAP|weights| Model 
+:--:|:--:|:--:|:--:
+ yolov3(paper)     | 74.4 |40.3 | 204.8M | 
+ yolov3-tiny(paper)| 38.8 |15.6 | 35.4M | 
 
 
 | Model                   | mAP (min. 50 IoU) |
