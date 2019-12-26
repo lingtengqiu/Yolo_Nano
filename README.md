@@ -22,7 +22,6 @@ Better Para:
    --epochs 120  
    --batch_size 8  
    --model_def ./config/yolo-nano_person.cfg  
-   --warm_up_lr 2  
    --lr 2.5e-4  
    --fix_up True  
 ```
