@@ -1,16 +1,6 @@
-# PyTorch-YOLOv3
-A minimal PyTorch implementation of YOLOv3, with support for training, inference and evaluation.
-
-## Installation
-##### Clone and install requirements
-    $ git clone https://github.com/eriklindernoren/PyTorch-YOLOv3
-    $ cd PyTorch-YOLOv3/
-    $ sudo pip3 install -r requirements.txt
-
-##### Download pretrained weights
-    $ cd weights/
-    $ bash download_weights.sh
-
+# PyTorch-YOLO_Nano
+A minimal PyTorch implementation of YOLO_Nano
+- [Yolo_Nano](https://arxiv.org/abs/1910.01271)
 ##### Download COCO
     $ cd data/
     $ bash get_coco_dataset.sh
