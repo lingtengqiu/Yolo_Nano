@@ -23,7 +23,11 @@ Baidu WebDisk Key: p2j3
 ## Ablation Result
  Augmentation| fixup | mAP 
 :--------------:|:--:|:--:
-- [x]|- [x]|- [x]
+No|No|54.3
+Yes|No|53.9
+No|YES|55.6
+YES|YES|54.8
+
 
 
 | Model                   | mAP (min. 50 IoU) |mAP (min. 50 IoU)
