@@ -36,9 +36,9 @@ we compare with yolov-3，yolo-tiny. We got competitive results.
 
 Methods |mAP@50|mAP|weights|FPS| Model 
 :--------------:|:--:|:--:|:--: |:--:  |:--:
- yolov3(paper)      | 74.4 |40.3 | 204.8M|  |[Google Disk](https://pjreddie.com/media/files/yolov3.weights)
- yolov3-tiny(paper) | 38.8 |15.6 | 35.4M |  |[Google Disk](https://pjreddie.com/media/files/yolov3-tiny.weights)
- yolo-nano          | 55.6 |27.7 | 22.0M | 46FPS |[Baidu WebDisk](https://pan.baidu.com/s/1Rp0is2LqA91XwjRc41mGaw)  
+ yolov3(paper)      | 74.4 |40.3 | 204.8M| 28.6FPS  |[Google Disk](https://pjreddie.com/media/files/yolov3.weights)
+ yolov3-tiny(paper) | 38.8 |15.6 | 35.4M | 45FPS |[Google Disk](https://pjreddie.com/media/files/yolov3-tiny.weights)
+ yolo-nano          | 55.6 |27.7 | 22.0M | 56FPS |[Baidu WebDisk](https://pan.baidu.com/s/1Rp0is2LqA91XwjRc41mGaw)  
  
 Baidu WebDisk Key: p2j3
 ## Ablation Result
