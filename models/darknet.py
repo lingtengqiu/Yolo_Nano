@@ -190,7 +190,6 @@ class YOLOLayer(nn.Module):
         if targets is None:
             return output, 0
         else:
-
             iou_scores, class_mask, obj_mask, noobj_mask, tx, ty, tw, th, tcls, tconf,batches_weights,obj_mask_mix_index = build_targets(
                 pred_boxes=pred_boxes,
                 pred_cls=pred_cls,
@@ -206,15 +205,21 @@ class YOLOLayer(nn.Module):
             sum_weights1,sum_weights2 = batches_weights
             obj_mask_1,obj_mask_2 = obj_mask_mix_index
 
+
             loss_x_1 = torch.mean(self.mse_loss(x[obj_mask_1], tx[obj_mask_1])*sum_weights1[obj_mask_1])
             loss_y_1 = torch.mean(self.mse_loss(y[obj_mask_1], ty[obj_mask_1])*sum_weights1[obj_mask_1])
             loss_w_1 = torch.mean(self.mse_loss(w[obj_mask_1], tw[obj_mask_1])*sum_weights1[obj_mask_1])
             loss_h_1 = torch.mean(self.mse_loss(h[obj_mask_1], th[obj_mask_1])*sum_weights1[obj_mask_1])
-
-            loss_x_2 = torch.mean(self.mse_loss(x[obj_mask_2], tx[obj_mask_2])*sum_weights2[obj_mask_2])
-            loss_y_2 = torch.mean(self.mse_loss(y[obj_mask_2], ty[obj_mask_2])*sum_weights2[obj_mask_2])
-            loss_w_2 = torch.mean(self.mse_loss(w[obj_mask_2], tw[obj_mask_2])*sum_weights2[obj_mask_2])
-            loss_h_2 = torch.mean(self.mse_loss(h[obj_mask_2], th[obj_mask_2])*sum_weights2[obj_mask_2])
+            if obj_mask_2 is not None:
+                loss_x_2 = torch.mean(self.mse_loss(x[obj_mask_2], tx[obj_mask_2])*sum_weights2[obj_mask_2])
+                loss_y_2 = torch.mean(self.mse_loss(y[obj_mask_2], ty[obj_mask_2])*sum_weights2[obj_mask_2])
+                loss_w_2 = torch.mean(self.mse_loss(w[obj_mask_2], tw[obj_mask_2])*sum_weights2[obj_mask_2])
+                loss_h_2 = torch.mean(self.mse_loss(h[obj_mask_2], th[obj_mask_2])*sum_weights2[obj_mask_2])
+            else:
+                loss_x_2 = 0.
+                loss_y_2 = 0.
+                loss_w_2 = 0.
+                loss_h_2 = 0.
 
             loss_x = loss_x_1+loss_x_2
             loss_y = loss_y_1+loss_y_2
@@ -224,14 +229,20 @@ class YOLOLayer(nn.Module):
 
 
             loss_conf_obj_1 = torch.mean(self.bce_loss(pred_conf[obj_mask_1], tconf[obj_mask_1])*sum_weights1[obj_mask_1])
-            loss_conf_obj_2 = torch.mean(self.bce_loss(pred_conf[obj_mask_2], tconf[obj_mask_2])*sum_weights2[obj_mask_2])
+            if obj_mask_2 is not None:
+                loss_conf_obj_2 = torch.mean(self.bce_loss(pred_conf[obj_mask_2], tconf[obj_mask_2])*sum_weights2[obj_mask_2])
+            else:
+                loss_conf_obj_2 = 0.
             loss_conf_obj = loss_conf_obj_1+loss_conf_obj_2
 
             loss_conf_noobj = torch.mean(self.bce_loss(pred_conf[noobj_mask], tconf[noobj_mask]))
             loss_conf = self.obj_scale * loss_conf_obj + self.noobj_scale * loss_conf_noobj
 
             loss_cls_1 = torch.mean(self.bce_loss(pred_cls[obj_mask_1], tcls[obj_mask_1])*sum_weights1[obj_mask_1])
-            loss_cls_2 = torch.mean(self.bce_loss(pred_cls[obj_mask_2], tcls[obj_mask_2])*sum_weights2[obj_mask_2])
+            if obj_mask_2 is not None:
+                loss_cls_2 = torch.mean(self.bce_loss(pred_cls[obj_mask_2], tcls[obj_mask_2])*sum_weights2[obj_mask_2])
+            else:
+                loss_cls_2 = 0.
             loss_cls = loss_cls_1+loss_cls_2
             total_loss = loss_x + loss_y + loss_w + loss_h + loss_conf + loss_cls
 
