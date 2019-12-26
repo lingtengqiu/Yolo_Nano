@@ -8,6 +8,7 @@ A minimal PyTorch implementation of YOLO_Nano
 - [x] Fixup  
 - [x] Cosine lr decay  
 - [x] Warm up
+- [ ] multi-GPU 
 ##### Download COCO
     $ cd data/
     $ bash get_coco_dataset.sh
