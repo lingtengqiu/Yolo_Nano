@@ -26,6 +26,11 @@ Better Para:
    --lr 2.5e-4  
    --fix_up True  
 ```
+## Testing
+```bash
+python test.py --data_config ./config/coco_person.data --model_def ./config/yolo-nano_person.cfg --weights_path [checkpoint path]
+
+```
 ## Result
 In this engineer we only train our model using coco-train person class  
 we compare with yolov-3，yolo-tiny. We got competitive results.  
