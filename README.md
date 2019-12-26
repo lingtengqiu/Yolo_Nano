@@ -3,7 +3,7 @@ A minimal PyTorch implementation of YOLO_Nano
 - [Yolo_Nano](https://arxiv.org/abs/1910.01271)
 - [Bag of Freebies for Training Object Detection Neural Networks](https://arxiv.org/abs/1902.04103v3)  
 ##### trick In here I have done  
-From Bag of Freebies for Training Object Detection Neural Networks tell us that fixup in object detection can increase the mAP, So I realize it and test in result. 
+[Bag of Freebies for Training Object Detection Neural Networks](https://arxiv.org/abs/1902.04103v3) tell us that fixup in object detection can increase the mAP, So I realize it and test in result. 
 - [x] Data Augmentation  
 - [x] Fixup  
 ##### Download COCO
@@ -19,6 +19,11 @@ Methods |mAP@50|mAP|weights| Model
  yolov3(paper)      | 74.4 |40.3 | 204.8M|  [Google Disk](https://pjreddie.com/media/files/yolov3.weights)
  yolov3-tiny(paper) | 38.8 |15.6 | 35.4M |  [Google Disk](https://pjreddie.com/media/files/yolov3-tiny.weights)
  yolo-nano          | 55.6 |27.7 | 22.0M |  [Baidu WebDisk](https://pan.baidu.com/s/1Rp0is2LqA91XwjRc41mGaw)
+ 
+## Ablation Result
+ Augmentation|| Fixup| mAP 
+:--------------:|:--:|:--:
+☑ |☑ |0.55
  
  Baidu WebDisk Key: p2j3
 
