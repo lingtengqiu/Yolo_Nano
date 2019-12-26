@@ -17,6 +17,13 @@ A minimal PyTorch implementation of YOLO_Nano
 ```bash
 bash train.sh
 ```
+better Para:
+   --epochs 120
+   --batch_size 8
+   --model_def ./config/yolo-nano_person.cfg
+   --warm_up_lr 2
+   --lr 2.5e-4
+   --fix_up True
 ## Result
 In this engineer we only train our model using coco-train person class  
 we compare with yolov-3，yolo-tiny. We got competitive results.  
