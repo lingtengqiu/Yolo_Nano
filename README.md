@@ -7,7 +7,8 @@ A minimal PyTorch implementation of YOLO_Nano
     
 ## Result
 In this engineer we only train our model using coco-train person class  
-we compare with yolov-3，yolo-tiny. We got competitive results.
+we compare with yolov-3，yolo-tiny. We got competitive results.  
+
 Methods |mAP@50|mAP|weights| Model 
 :--:|:--:|:--:|:--:
  yolov3(paper)     | 74.4 |40.3 | 204.8M | 
