@@ -19,12 +19,11 @@ Methods |mAP@50|mAP|weights| Model
  yolov3(paper)      | 74.4 |40.3 | 204.8M|  [Google Disk](https://pjreddie.com/media/files/yolov3.weights)
  yolov3-tiny(paper) | 38.8 |15.6 | 35.4M |  [Google Disk](https://pjreddie.com/media/files/yolov3-tiny.weights)
  yolo-nano          | 55.6 |27.7 | 22.0M |  [Baidu WebDisk](https://pan.baidu.com/s/1Rp0is2LqA91XwjRc41mGaw)
- 
+Baidu WebDisk Key: p2j3
 ## Ablation Result
  Augmentation| fixup | mAP 
 :--------------:|:--:|:--:
-[-]               [-]  [-]
- Baidu WebDisk Key: p2j3
+[-]|[-]|  [-]
 
 
 | Model                   | mAP (min. 50 IoU) |mAP (min. 50 IoU)
