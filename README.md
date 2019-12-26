@@ -1,10 +1,10 @@
 # PyTorch-YOLO_Nano
 A minimal PyTorch implementation of YOLO_Nano
 - [Yolo_Nano](https://arxiv.org/abs/1910.01271)
-- [Bag of Freebies for Training Object Detection Neural Networks](https://arxiv.org/abs/1902.04103v3)
+- [Bag of Freebies for Training Object Detection Neural Networks](https://arxiv.org/abs/1902.04103v3)  
 trick In here I have done
-- [x] Data Augmentation
-- [x] Fixup
+- [x] Data Augmentation  
+- [x] Fixup  
 From Bag of Freebies for Training Object Detection Neural Networks tell us that fixup in object detection can increase the mAP, So I realize it and test in result. 
 ##### Download COCO
     $ cd data/
