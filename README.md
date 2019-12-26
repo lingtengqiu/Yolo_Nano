@@ -13,6 +13,10 @@ A minimal PyTorch implementation of YOLO_Nano
     $ bash get_coco_dataset.sh
 ## Module Pipeline
 ![Pipeline](assets/structure.png)
+## training
+```bash
+bash train.sh
+```
 ## Result
 In this engineer we only train our model using coco-train person class  
 we compare with yolov-3，yolo-tiny. We got competitive results.  
