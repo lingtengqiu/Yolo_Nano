@@ -10,10 +10,10 @@ In this engineer we only train our model using coco-train person class
 we compare with yolov-3，yolo-tiny. We got competitive results.  
 
 Methods |mAP@50|mAP|weights| Model 
-:--:|:--:|:--:|:--: |:--:  
- yolov3(paper)     | 74.4 |40.3 | 204.8M|  here
- yolov3-tiny(paper)| 38.8 |15.6 | 35.4M |  here
- yolo-nano         | 55.6 |27.7 | 22.0M |  [Baidu WebDisk](链接: https://pan.baidu.com/s/1Rp0is2LqA91XwjRc41mGaw)
+:--------------:|:--:|:--:|:--: |:--:  
+ yolov3(paper)      | 74.4 |40.3 | 204.8M|  here
+ yolov3-tiny(paper) | 38.8 |15.6 | 35.4M |  here
+ yolo-nano          | 55.6 |27.7 | 22.0M |  [Baidu WebDisk](https://pan.baidu.com/s/1Rp0is2LqA91XwjRc41mGaw)
  
  Baidu WebDisk Key: p2j3
 
