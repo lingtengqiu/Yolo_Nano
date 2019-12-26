@@ -1,0 +1,5 @@
+classes= 80
+valid=data/MOT/MOT17-07-DPM.txt
+names=data/coco.names
+backup=backup/
+eval=coco

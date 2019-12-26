@@ -1,0 +1,5 @@
+classes= 80
+valid=data/vid/vid65132.txt
+names=data/coco.names
+backup=backup/
+eval=coco
