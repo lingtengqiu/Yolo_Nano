@@ -3,7 +3,7 @@
 
 # **********************************************************
 # * Author        : lingteng qiu
-# * Email         : 1259738366@qq.com
+# * Email         : 
 # * Create time   : 2018-11-06 09:52
 # * Last modified : 2018-11-06 09:52
 # * Filename      : board.py
